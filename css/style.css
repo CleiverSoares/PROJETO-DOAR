@@ -916,6 +916,7 @@ html [class*='section-'].section-bottom-0 {
 	padding-top: 0;
 }
 
+
 .bg-primary + .bg-primary {
 	padding-top: 0;
 }
@@ -4248,6 +4249,8 @@ h2 + .tabs-albums {
 .nav-video-figure img {
 	width: 140px;
 	position: relative;
+	object-fit: cover;
+	height: 100px;
 }
 
 .nav-video-figure::before {
@@ -21031,7 +21034,6 @@ textarea.textarea-lg {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 10px;
-	background-image: url(../images/quote-jean.png);
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 }
@@ -21111,7 +21113,7 @@ textarea.textarea-lg {
 	padding: 10px 15px;
 	min-width: 230px;
 	transform: translate3d(-50%, 0, 0);
-	background: #ffffff;
+	background: transparent;
 	pointer-events: none;
 	transition: all .3s ease;
 }
@@ -21156,6 +21158,7 @@ textarea.textarea-lg {
 }
 
 .thumbnail-classic-text {
+	color: #fff;
 	display: none;
 }
 

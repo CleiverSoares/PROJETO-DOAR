@@ -1450,3 +1450,90 @@
 
 	} );
 }());
+
+function simulateMsg1() {
+	resetSimulate();
+
+	let dot1 = document.getElementById("dot1");
+	let dotMsg1 = document.getElementById("dotMsg1");
+
+	setTimeout(() => {
+		dot1.style.display = "block";
+
+		setTimeout(() => {
+			dot1.style.display = "none";
+			dotMsg1.style.display = "block";
+
+			simulateMsg2();
+		}, 800);
+	}, 800);
+}
+
+function simulateMsg2() {
+	let dot2 = document.getElementById("dot2");
+	let dotMsg2 = document.getElementById("dotMsg2");
+
+	dot2.style.display = "block";
+
+	setTimeout(() => {
+		dot2.style.display = "none";
+		dotMsg2.style.display = "block";
+	}, 800);
+}
+
+function resetSimulate() {
+	let dot1 = document.getElementById("dot1");
+	let dotMsg1 = document.getElementById("dotMsg1");
+
+	let dot2 = document.getElementById("dot2");
+	let dotMsg2 = document.getElementById("dotMsg2");
+
+	dot1.style.display = "none";
+	dotMsg1.style.display = "none";
+
+	dot2.style.display = "none";
+	dotMsg2.style.display = "none";
+}
+
+
+function myFunction() {
+	simulateMsg1()
+	document.getElementById("myDropdown").classList.toggle("show");
+	document.getElementById("myDropdown").style.zIndex = 1000;
+	mostrarDiv();
+}
+
+function mostrarDiv() {
+	var mostrarDiv = document.getElementsByClassName("div-fechar");
+	if (mostrarDiv[0].style.display === "flex") {
+		fecharDiv();
+	} else {
+		for (var x = 0; x < mostrarDiv.length; x++)
+			mostrarDiv[x].style.display = "flex";
+	}
+}
+
+function fecharDiv() {
+	var fecharDiv = document.getElementsByClassName("div-fechar");
+	for (var x = 0; x < fecharDiv.length; x++)
+		fecharDiv[x].style.display = "none";
+}
+
+function fecharModal() {
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+	for (i = 0; i < dropdowns.length; i++) {
+		var openDropdown = dropdowns[i];
+		if (openDropdown.classList.contains("show")) {
+			openDropdown.classList.remove("show");
+		}
+	}
+	mostrarDiv();
+}
+function atualizarDataHora() {
+	var hora = new Date();
+	var elementsHora = document.getElementsByClassName("hora-mensagem");
+	for (var i = 0; i < elementsHora.length; i++) {
+		elementsHora[i].innerHTML = hora.getHours() + ":" + hora.getUTCMinutes();
+	}
+}
+setInterval(atualizarDataHora, 1000);
