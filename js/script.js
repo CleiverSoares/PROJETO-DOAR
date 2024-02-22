@@ -1519,16 +1519,7 @@ function fecharDiv() {
 		fecharDiv[x].style.display = "none";
 }
 
-function fecharModal() {
-	var dropdowns = document.getElementsByClassName("dropdown-content");
-	for (i = 0; i < dropdowns.length; i++) {
-		var openDropdown = dropdowns[i];
-		if (openDropdown.classList.contains("show")) {
-			openDropdown.classList.remove("show");
-		}
-	}
-	mostrarDiv();
-}
+
 function atualizarDataHora() {
 	var hora = new Date();
 	var elementsHora = document.getElementsByClassName("hora-mensagem");

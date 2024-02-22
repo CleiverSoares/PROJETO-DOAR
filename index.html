@@ -1131,8 +1131,17 @@
       </div>
     </div>
   </div>
- 
-
+ <script>function 
+ fecharModal() {
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+	for (i = 0; i < dropdowns?.length; i++) {
+		var openDropdown = dropdowns[i];
+		if (openDropdown.classList.contains("show")) {
+			openDropdown.classList.remove("show");
+		}
+	}
+	mostrarDiv();
+}</script>
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
