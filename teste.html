@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Enviar mensagem para WhatsApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h2>Enviar mensagem para WhatsApp</h2>
-    <form id="whatsapp-form" method="post">
-        <label for="phone">Número de telefone (inclua o código do país, por exemplo, +5511999999999):</label><br>
-        <input type="text" id="phone" name="phone" required><br>
-        <label for="message">Mensagem:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
-        <button type="submit">Enviar Mensagem</button>
-    </form>
+    <style>
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 25%;
+            /* Mostra 4 slides por vez */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="image1.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Imagem 3">
+            </div>
+            <div class="slide">
+                <img src="image4.jpg" alt="Imagem 4">
+            </div>
+            <!-- Adicione mais slides conforme necessário -->
+        </div>
+    </div>
 
     <script>
-        document.getElementById("whatsapp-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const phone = encodeURIComponent(document.getElementById("phone").value);
-            const message = encodeURIComponent(document.getElementById("message").value);
-            const url = '/send-whatsapp';
+    const slideTrack = document.querySelector('.slide-track');
+        let slideIndex = 0;
 
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `phone=${phone}&message=${message}`
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert("Mensagem enviada com sucesso para o WhatsApp!");
-                    } else {
-                        alert("Erro ao enviar mensagem para o WhatsApp. Por favor, tente novamente mais tarde.");
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar mensagem para o WhatsApp:', error);
-                    alert("Erro ao enviar mensagem para o WhatsApp. Por favor, tente novamente mais tarde.");
-                });
-        });
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex > 3) { // Considerando que há 4 slides visíveis
+                slideIndex = 0;
+            }
+            updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            slideTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        }
+
+        setInterval(nextSlide, 3000); // Troca de slide a cada 3 segundos
     </script>
 </body>
 

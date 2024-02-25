@@ -24701,7 +24701,9 @@ h2.title-modern > span {
 }
 
 .team-classic-figure img {
-	width: 100%;
+	width: 420px;
+	height: 424px;
+	object-fit: cover;
 	filter: grayscale(100%);
 	transition: all .3s ease;
 }

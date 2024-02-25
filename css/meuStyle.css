@@ -82,6 +82,14 @@
   left: 0;
   z-index: -1;
 }
+.hide-after-btn {
+    display: none;
+  }
+  
+  .hide-after-btn.hide {
+    display: block;
+  }
+  
 .thumbnail-classic-figure img {
   width: 420px !important;
   height: 350px !important;
