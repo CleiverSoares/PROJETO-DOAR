@@ -104,6 +104,10 @@
   .aling-texto-whatsapp {
     display: none !important;
   }
+  .nav-video-figure img {
+    width: 300PX;
+    height: 150px;
+}
 }
 @media (max-width: 959px) {
   .contador-idade {
