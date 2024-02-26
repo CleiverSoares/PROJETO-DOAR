@@ -1250,7 +1250,7 @@ html:not(.lt-ie10) .not-animated {
 .ui-to-top {
 	position: fixed;
 	right: 15px;
-	bottom: 15px;
+	bottom: 5px !important;
 	z-index: 100;
 	width: 48px;
 	height: 48px;
@@ -30207,7 +30207,7 @@ html.rd-navbar-fixed-linked .page-header {
 @media (min-width: 1600px) {
 	.swiper-slider-classic {
 		max-width: 1920px;
-		padding: 0 75px;
+		padding: 0;
 	}
 }
 
