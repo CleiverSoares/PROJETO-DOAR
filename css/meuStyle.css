@@ -30,7 +30,7 @@
   font-size: 28px;
   font-weight: bold;
 }
-.sessao-23-anos{
+.sessao-23-anos {
   margin-top: 80px;
   margin-bottom: -10px;
 }
@@ -86,13 +86,13 @@
   z-index: -1;
 }
 .hide-after-btn {
-    display: none;
-  }
-  
-  .hide-after-btn.hide {
-    display: block;
-  }
-  
+  display: none;
+}
+
+.hide-after-btn.hide {
+  display: block;
+}
+
 .thumbnail-classic-figure img {
   width: 420px !important;
   height: 350px !important;
@@ -112,19 +112,28 @@
 }
 
 @media (max-width: 500px) {
+  .meu-mobile {
+    display: block !important;
+  }
+  .meu-desktop {
+    display: none;
+  }
   .aling-texto-whatsapp {
     display: none !important;
   }
   .nav-video-figure img {
-    width: 300PX;
+    width: 300px;
     height: 150px;
+  }
 }
-}
-.fl-bigmug-line-share27{
+.fl-bigmug-line-share27,
+.meu-mobile {
   display: none;
 }
+
 @media (max-width: 959px) {
-  .fl-bigmug-line-share27{
+
+  .fl-bigmug-line-share27 {
     display: block;
   }
   .contador-idade {
