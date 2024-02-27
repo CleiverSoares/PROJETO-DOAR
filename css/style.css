@@ -24707,7 +24707,12 @@ h2.title-modern > span {
 	filter: grayscale(100%);
 	transition: all .3s ease;
 }
-
+@media(max-width: 959px){
+	.team-classic-figure img {
+	
+		filter: none !important;
+	}
+}
 .team-classic-caption {
 	position: absolute;
 	overflow: hidden;
