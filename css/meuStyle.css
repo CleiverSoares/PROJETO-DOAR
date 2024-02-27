@@ -30,7 +30,10 @@
   font-size: 28px;
   font-weight: bold;
 }
-
+.sessao-23-anos{
+  margin-top: 80px;
+  margin-bottom: -10px;
+}
 .close:hover,
 .close:focus {
   color: black;
