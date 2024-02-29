@@ -24706,6 +24706,7 @@ h2.title-modern > span {
 	object-fit: cover;
 	filter: grayscale(100%);
 	transition: all .3s ease;
+	border-radius: 8px;
 }
 @media(max-width: 959px){
 	.team-classic-figure img {
