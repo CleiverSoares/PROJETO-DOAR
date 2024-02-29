@@ -113,7 +113,7 @@
 
 @media (max-width: 500px) {
   .meu-mobile {
-    display: block !important;
+    display: block !important ;
   }
   .meu-desktop {
     display: none;
@@ -132,6 +132,9 @@
 }
 
 @media (max-width: 959px) {
+  html.rd-navbar-fixed-linked .page-header {
+    height: 0px !important;
+  }
 
   .fl-bigmug-line-share27 {
     display: block;
